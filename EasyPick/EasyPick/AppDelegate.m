@@ -86,7 +86,7 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
     self = [super init];
     if (self) {
         [SFLogger setLogLevel:SFLogLevelDebug];
-        [[SFAuthenticationManager sharedManager] logout];
+       // [[SFAuthenticationManager sharedManager] logout];
         
         // These SFAccountManager settings are the minimum required to identify the Connected App.
         [SFUserAccountManager sharedInstance].oauthClientId = RemoteAccessConsumerKey;

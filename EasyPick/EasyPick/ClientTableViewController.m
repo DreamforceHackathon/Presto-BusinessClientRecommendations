@@ -8,8 +8,11 @@
 
 #import "ClientTableViewController.h"
 #import "EPContactListingCell.h"
-#import "SwipeSelectionViewController.h"
+#import "EPStartRecommendationViewController.h"
 #import "EFContactDetailsViewController.h"
+#import "RecommedationViewController.h"
+#import "AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ClientTableViewController ()
 
@@ -29,9 +32,10 @@
     
     self.title = @"Salesforce Contacts";
     self.selectedContact = nil;
+    self.tableView.delegate = self;
     
     //Here we use a query that should work on either Force.com or Database.com
-    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name, Account.Name  FROM Contact LIMIT 10"];
+    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name, Account.Name, Description, AssistantName  FROM Contact LIMIT 20"];
 //    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name  FROM User LIMIT 10"];
     [[SFRestAPI sharedInstance] send:request delegate:self];
 
@@ -50,10 +54,17 @@
     NSLog(@"request:didLoadResponse: #records: %lu", (unsigned long)records.count);
     self.dataRows = records.mutableCopy;
     
+    NSArray *items = [@"a:1,b:2,c:3" componentsSeparatedByString:@","];
+    
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
+}
+
+
+- (void)parseCSVToMutableMap{
+    
 }
 
 
@@ -107,17 +118,60 @@
     cell.imgContactPhoto.layer.borderColor = [UIColor grayColor].CGColor;
 
     
-    cell.imgContactPhoto.image = [UIImage imageNamed:@"Jonathan.Ive.jpg"];
+    NSDictionary *obj = [self.dataRows objectAtIndex:indexPath.row];
+
+    NSString* urlStr = [obj objectForKey:@"AssistantName"];
+    NSLog(@"Assistant : %@", urlStr);
+     if (urlStr == nil || [urlStr isKindOfClass:[NSNull class]])
+    {
+        urlStr =@"http://www.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png";
+
+    }
+    
+    NSURL *url = [NSURL URLWithString:urlStr];
+    
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    UIImage *placeholderImage = [UIImage imageNamed:@"headshot-generic.jpg"];
+    
+    __weak EPContactListingCell *weakCell = cell;
+    
+    [cell.imgContactPhoto setImageWithURLRequest:request
+                          placeholderImage:placeholderImage
+                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                       
+
+                                       weakCell.imgContactPhoto.image = image;
+                                       [weakCell setNeedsLayout];
+                                       
+                                   } failure:nil];
+    //cell.imgContactPhoto.image = [UIImage imageNamed:@"Jonathan.Ive.jpg"];
+    
+    //;
     /*
     cell.lblContactCompany.text = @"Jonathan Ive";
     cell.lblContactCompany.text = @"Apple Inc.";
      */
     // Configure the cell to show the data.
-    NSDictionary *obj = [self.dataRows objectAtIndex:indexPath.row];
+    
     cell.lblContactFullName.text = [obj objectForKey:@"Name"];
     
-//    cell.lblContactCompany.text = @"Apple Inc.";
-    cell.lblContactCompany.text = [obj objectForKey:@"Account"];
+    cell.lblContactCompany.text = @"Apple Inc.";
+    
+    NSDictionary *obj1 = [obj objectForKey:@"Account"];
+    NSString* strAccountName = [obj1 objectForKey:@"Name"];
+    
+    NSLog(@"ACCOUNTNAME : %@", strAccountName);
+    
+    NSString* img = [obj objectForKey:@"Description"];
+    NSLog(@"Description : %@", img);
+    
+    
+    if(strAccountName != nil)
+        cell.lblContactCompany.text = strAccountName;
+    else
+        cell.lblContactCompany.text = @"Apple Inc.";
+    
     
     
     
@@ -170,6 +224,25 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedContact = nil;
+    self.selectedContact = [[SFContact alloc]init];
+
+    self.selectedContact.contactDetails = [self.dataRows objectAtIndex:indexPath.row];
+    self.selectedContact.strImgUrl = [self.selectedContact.contactDetails objectForKey:@"AssistantName"];
+    self.selectedContact.interestsList = [self.selectedContact.contactDetails objectForKey:@"Description"];
+    [self performSegueWithIdentifier: @"showRecommendationConfig" sender: [tableView cellForRowAtIndexPath: indexPath]];
+    
+    
+//    @property (nonatomic, strong) NSString* strImgUrl;
+ //   @property (nonatomic, strong) NSArray* interestsList;
+
+    
+   // [self performSegueWithIdentifier: @"showRecommendation" sender: [tableView cellForRowAtIndexPath: indexPath]];
+ //   [self performSegueWithIdentifier: @"showRecommendationConfig" sender: [tableView cellForRowAtIndexPath: indexPath]];
+    
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -184,7 +257,25 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         vc.selectedSFContact = self.selectedContact;
         
+    }else
+    if ([segue.identifier isEqualToString:@"showRecommendation"]) {
+        RecommedationViewController* vc = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//        vc.selectedSFContact = self.selectedContact;
+        
     }
+    else if ([segue.identifier isEqualToString:@"showRecommendationConfig"]) {
+        
+        UINavigationController* vcNav = [segue destinationViewController];
+        
+        EPStartRecommendationViewController* vc = [vcNav.viewControllers firstObject];
+       // NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+                vc.selectedContact = self.selectedContact;
+        
+    }
+    
+    
+    
     
 }
 

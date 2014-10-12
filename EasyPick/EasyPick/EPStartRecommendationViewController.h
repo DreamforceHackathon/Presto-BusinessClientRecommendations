@@ -10,7 +10,7 @@
 #import "SFContact.h"
 #import "DraggableViewBackground.h"
 
-@interface SwipeSelectionViewController : UIViewController
+@interface EPStartRecommendationViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) SFContact* selectedContact;
 

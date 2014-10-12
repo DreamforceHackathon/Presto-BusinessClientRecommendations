@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFNetworking.h"
 
 @interface EPContactListingCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imgContactPhoto;

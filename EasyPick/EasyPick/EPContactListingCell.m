@@ -23,11 +23,11 @@
 
     // Configure the view for the selected state
 }
-
+/*
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
+    /*
     if (self) {
         // Helpers
         self.imgContactPhoto.layer.cornerRadius = self.imgContactPhoto.frame.size.width / 2;
@@ -49,11 +49,13 @@
         
         // Add Main Label to Content View
         [self.contentView addSubview:self.mainLabel];
-         */
+         * /
         
         
     }
+* /
     
     return self;
 }
+*/
 @end

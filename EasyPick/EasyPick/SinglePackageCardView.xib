@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SFCardSinglePackageView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images_key1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="cCR-NU-gVi">
+                    <rect key="frame" x="16" y="16" width="568" height="215"/>
+                    <color key="backgroundColor" red="0.96322943240000003" green="0.09963484886" blue="0.39337166569999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="215" id="fGw-Db-m5J"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$360" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-JF-ef9">
+                    <rect key="frame" x="527" y="251" width="57" height="36"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="Tsv-97-EhF"/>
+                        <constraint firstAttribute="width" constant="57" id="TtA-tU-JTe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1b-0J-r3s">
+                    <rect key="frame" x="472" y="251" width="55" height="36"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="n8e-QN-qtu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie number 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgz-uN-lQA">
+                    <rect key="frame" x="472" y="190" width="76" height="12"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Lgz-uN-lQA" firstAttribute="top" secondItem="cCR-NU-gVi" secondAttribute="bottom" constant="-41" id="56V-T7-xAh"/>
+                <constraint firstAttribute="trailing" secondItem="cCR-NU-gVi" secondAttribute="trailing" constant="16" id="HHD-9l-bUU"/>
+                <constraint firstItem="f1b-0J-r3s" firstAttribute="bottom" secondItem="sc5-JF-ef9" secondAttribute="bottom" id="Hs3-8n-Q49"/>
+                <constraint firstItem="f1b-0J-r3s" firstAttribute="top" secondItem="sc5-JF-ef9" secondAttribute="top" id="IKW-Wz-Ny6"/>
+                <constraint firstItem="sc5-JF-ef9" firstAttribute="leading" secondItem="f1b-0J-r3s" secondAttribute="trailing" id="NaB-cw-kdl"/>
+                <constraint firstAttribute="centerX" secondItem="cCR-NU-gVi" secondAttribute="centerX" id="YiN-0e-EGa"/>
+                <constraint firstItem="sc5-JF-ef9" firstAttribute="leading" secondItem="f1b-0J-r3s" secondAttribute="trailing" id="aae-VV-dIe"/>
+                <constraint firstItem="sc5-JF-ef9" firstAttribute="top" secondItem="cCR-NU-gVi" secondAttribute="bottom" constant="20" id="avj-le-hVw"/>
+                <constraint firstAttribute="trailing" secondItem="sc5-JF-ef9" secondAttribute="trailing" constant="16" id="jrm-Pr-N7e"/>
+                <constraint firstItem="cCR-NU-gVi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="qNX-Eq-p7g"/>
+                <constraint firstItem="Lgz-uN-lQA" firstAttribute="leading" secondItem="cCR-NU-gVi" secondAttribute="trailing" constant="-112" id="xE3-nU-vAw"/>
+                <constraint firstItem="cCR-NU-gVi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="xQI-bn-Sfy"/>
+            </constraints>
+            <connections>
+                <outlet property="imgCategoryOne" destination="cCR-NU-gVi" id="xS2-Up-8nG"/>
+                <outlet property="labelEventOne" destination="Lgz-uN-lQA" id="qPC-rZ-cuh"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="images_key1.jpeg" width="236" height="160"/>
+    </resources>
+</document>

@@ -10,6 +10,30 @@
 
 @implementation SFContact
 
+-(instancetype) init
+{
+    self = [super init];
+    
+    [self parseAndInitialize];
+    return  self;
+}
 
+- (void) parseAndInitialize
+{
+    
+    if(self.contactDetails == nil)
+        return;
+    
+    NSString* interestString =     [self.contactDetails objectForKey:@"Description"];
+    
+    self.interestsList = [interestString componentsSeparatedByString:@","];
+    
+    self.strImgUrl = [self.contactDetails objectForKey:@"AssistantName"];
+    
+    
+
+    
+    
+}
 
 @end

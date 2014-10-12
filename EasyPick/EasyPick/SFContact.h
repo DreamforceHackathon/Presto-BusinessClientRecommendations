@@ -11,4 +11,6 @@
 @interface SFContact : NSObject
 
 @property (nonatomic, strong) NSDictionary* contactDetails;
+@property (nonatomic, strong) NSString* strImgUrl;
+@property (nonatomic, strong) NSArray* interestsList;
 @end
