@@ -190,6 +190,7 @@
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"CardView" owner:nil options:nil];
     SFCardPackageView *headerView = [nibContents lastObject];
     [headerView setBackgroundColor:[UIColor grayColor]];
+
     
     NSArray *nibContents1 = [[NSBundle mainBundle] loadNibNamed:@"CardView" owner:nil options:nil];
     SFCardPackageView *view1 = [nibContents1 lastObject];

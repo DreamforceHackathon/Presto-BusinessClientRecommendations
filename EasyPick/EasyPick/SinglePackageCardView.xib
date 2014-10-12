@@ -39,7 +39,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie number 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgz-uN-lQA">
-                    <rect key="frame" x="472" y="190" width="76" height="12"/>
+                    <rect key="frame" x="464" y="199" width="76" height="12"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -47,6 +47,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="Lgz-uN-lQA" firstAttribute="top" secondItem="cCR-NU-gVi" secondAttribute="bottom" constant="-41" id="56V-T7-xAh"/>
+                <constraint firstItem="Lgz-uN-lQA" firstAttribute="leading" secondItem="cCR-NU-gVi" secondAttribute="trailing" constant="-120" id="6V6-34-DnL"/>
                 <constraint firstAttribute="trailing" secondItem="cCR-NU-gVi" secondAttribute="trailing" constant="16" id="HHD-9l-bUU"/>
                 <constraint firstItem="f1b-0J-r3s" firstAttribute="bottom" secondItem="sc5-JF-ef9" secondAttribute="bottom" id="Hs3-8n-Q49"/>
                 <constraint firstItem="f1b-0J-r3s" firstAttribute="top" secondItem="sc5-JF-ef9" secondAttribute="top" id="IKW-Wz-Ny6"/>
@@ -56,9 +57,16 @@
                 <constraint firstItem="sc5-JF-ef9" firstAttribute="top" secondItem="cCR-NU-gVi" secondAttribute="bottom" constant="20" id="avj-le-hVw"/>
                 <constraint firstAttribute="trailing" secondItem="sc5-JF-ef9" secondAttribute="trailing" constant="16" id="jrm-Pr-N7e"/>
                 <constraint firstItem="cCR-NU-gVi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="qNX-Eq-p7g"/>
+                <constraint firstItem="Lgz-uN-lQA" firstAttribute="top" secondItem="cCR-NU-gVi" secondAttribute="bottom" constant="-32" id="vVP-n5-LA2"/>
                 <constraint firstItem="Lgz-uN-lQA" firstAttribute="leading" secondItem="cCR-NU-gVi" secondAttribute="trailing" constant="-112" id="xE3-nU-vAw"/>
                 <constraint firstItem="cCR-NU-gVi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="xQI-bn-Sfy"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="56V-T7-xAh"/>
+                    <exclude reference="xE3-nU-vAw"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="imgCategoryOne" destination="cCR-NU-gVi" id="xS2-Up-8nG"/>
                 <outlet property="labelEventOne" destination="Lgz-uN-lQA" id="qPC-rZ-cuh"/>
@@ -66,6 +74,6 @@
         </view>
     </objects>
     <resources>
-        <image name="images_key1.jpeg" width="236" height="160"/>
+        <image name="images_key1.jpeg" width="68" height="39"/>
     </resources>
 </document>

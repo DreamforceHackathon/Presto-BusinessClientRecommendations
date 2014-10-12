@@ -10,14 +10,14 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images_key1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="cCR-NU-gVi">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="m1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cCR-NU-gVi">
                     <rect key="frame" x="16" y="16" width="568" height="100"/>
                     <color key="backgroundColor" red="0.96322943240000003" green="0.09963484886" blue="0.39337166569999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="fGw-Db-m5J"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images_key1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="ChO-FI-wZ5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="m3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ChO-FI-wZ5">
                     <rect key="frame" x="16" y="131" width="568" height="100"/>
                     <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -45,14 +45,14 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Movie number 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgz-uN-lQA">
-                    <rect key="frame" x="406" y="74" width="138" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgz-uN-lQA">
+                    <rect key="frame" x="464" y="84" width="76" height="12"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Movie number 2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hst-UG-CmE">
-                    <rect key="frame" x="406" y="186" width="138" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Movie" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hst-UG-CmE">
+                    <rect key="frame" x="464" y="199" width="76" height="12"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -62,16 +62,16 @@
                 <constraint firstItem="ChO-FI-wZ5" firstAttribute="width" secondItem="cCR-NU-gVi" secondAttribute="width" id="0hl-DC-xhv"/>
                 <constraint firstItem="ChO-FI-wZ5" firstAttribute="centerX" secondItem="cCR-NU-gVi" secondAttribute="centerX" id="39e-eI-psS"/>
                 <constraint firstItem="ChO-FI-wZ5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="AwO-Lh-beT"/>
-                <constraint firstItem="Lgz-uN-lQA" firstAttribute="leading" secondItem="cCR-NU-gVi" secondAttribute="trailing" constant="-178" id="DLv-cy-MNa"/>
+                <constraint firstItem="Lgz-uN-lQA" firstAttribute="leading" secondItem="cCR-NU-gVi" secondAttribute="trailing" constant="-120" id="DLv-cy-MNa"/>
                 <constraint firstItem="sc5-JF-ef9" firstAttribute="top" secondItem="ChO-FI-wZ5" secondAttribute="bottom" constant="20" id="FQ4-9i-dex"/>
                 <constraint firstAttribute="trailing" secondItem="cCR-NU-gVi" secondAttribute="trailing" constant="16" id="HHD-9l-bUU"/>
                 <constraint firstItem="f1b-0J-r3s" firstAttribute="bottom" secondItem="sc5-JF-ef9" secondAttribute="bottom" id="Hs3-8n-Q49"/>
                 <constraint firstItem="sc5-JF-ef9" firstAttribute="trailing" secondItem="ChO-FI-wZ5" secondAttribute="trailing" id="I4a-DO-drj"/>
                 <constraint firstItem="f1b-0J-r3s" firstAttribute="top" secondItem="sc5-JF-ef9" secondAttribute="top" id="IKW-Wz-Ny6"/>
-                <constraint firstItem="Lgz-uN-lQA" firstAttribute="top" secondItem="cCR-NU-gVi" secondAttribute="bottom" constant="-42" id="IeB-lo-b4Z"/>
-                <constraint firstItem="hst-UG-CmE" firstAttribute="leading" secondItem="ChO-FI-wZ5" secondAttribute="trailing" constant="-178" id="KG1-Bf-66h"/>
+                <constraint firstItem="Lgz-uN-lQA" firstAttribute="top" secondItem="cCR-NU-gVi" secondAttribute="bottom" constant="-32" id="IeB-lo-b4Z"/>
+                <constraint firstItem="hst-UG-CmE" firstAttribute="leading" secondItem="ChO-FI-wZ5" secondAttribute="trailing" constant="-120" id="KG1-Bf-66h"/>
                 <constraint firstItem="sc5-JF-ef9" firstAttribute="leading" secondItem="f1b-0J-r3s" secondAttribute="trailing" id="NaB-cw-kdl"/>
-                <constraint firstItem="hst-UG-CmE" firstAttribute="top" secondItem="ChO-FI-wZ5" secondAttribute="bottom" constant="-45" id="Opq-Yh-1vG"/>
+                <constraint firstItem="hst-UG-CmE" firstAttribute="top" secondItem="ChO-FI-wZ5" secondAttribute="bottom" constant="-32" id="Opq-Yh-1vG"/>
                 <constraint firstItem="ChO-FI-wZ5" firstAttribute="height" secondItem="cCR-NU-gVi" secondAttribute="height" id="Pb9-8X-SIF"/>
                 <constraint firstItem="ChO-FI-wZ5" firstAttribute="top" secondItem="cCR-NU-gVi" secondAttribute="bottom" constant="15" id="Tuv-m8-ZKP"/>
                 <constraint firstAttribute="centerX" secondItem="cCR-NU-gVi" secondAttribute="centerX" id="YiN-0e-EGa"/>
@@ -96,6 +96,7 @@
         </view>
     </objects>
     <resources>
-        <image name="images_key1.jpeg" width="236" height="160"/>
+        <image name="m1.jpg" width="214" height="317"/>
+        <image name="m3.jpg" width="214" height="317"/>
     </resources>
 </document>

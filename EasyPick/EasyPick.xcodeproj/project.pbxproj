@@ -29,6 +29,8 @@
 		39A24A7519E9BCD4009B43C6 /* EPStartRecommendationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A7419E9BCD4009B43C6 /* EPStartRecommendationViewController.m */; };
 		39A24A7819E9BE1D009B43C6 /* SFContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A7719E9BE1D009B43C6 /* SFContact.m */; };
 		39A24A7E19EA02BF009B43C6 /* EFContactDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A7D19EA02BF009B43C6 /* EFContactDetailsViewController.m */; };
+		39B42B9C19EB02E700D54967 /* m1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39B42B9A19EB02E700D54967 /* m1.jpg */; };
+		39B42B9D19EB02E700D54967 /* m3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39B42B9B19EB02E700D54967 /* m3.jpg */; };
 		39F37D2F19EAC6AE00EB3134 /* SinglePackageCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F37D2E19EAC6AE00EB3134 /* SinglePackageCardView.xib */; };
 		39F37D3219EAC79300EB3134 /* SFCardSinglePackageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F37D3119EAC79300EB3134 /* SFCardSinglePackageView.m */; };
 		39F37D3519EAC9E400EB3134 /* EPSearchFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F37D3419EAC9E400EB3134 /* EPSearchFilter.m */; };
@@ -122,6 +124,8 @@
 		39A24A7719E9BE1D009B43C6 /* SFContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFContact.m; path = EasyPick/SFContact.m; sourceTree = "<group>"; };
 		39A24A7C19EA02BF009B43C6 /* EFContactDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EFContactDetailsViewController.h; path = EasyPick/EFContactDetailsViewController.h; sourceTree = "<group>"; };
 		39A24A7D19EA02BF009B43C6 /* EFContactDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EFContactDetailsViewController.m; path = EasyPick/EFContactDetailsViewController.m; sourceTree = "<group>"; };
+		39B42B9A19EB02E700D54967 /* m1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = m1.jpg; sourceTree = "<group>"; };
+		39B42B9B19EB02E700D54967 /* m3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = m3.jpg; sourceTree = "<group>"; };
 		39F37D2E19EAC6AE00EB3134 /* SinglePackageCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SinglePackageCardView.xib; sourceTree = "<group>"; };
 		39F37D3019EAC79300EB3134 /* SFCardSinglePackageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCardSinglePackageView.h; sourceTree = "<group>"; };
 		39F37D3119EAC79300EB3134 /* SFCardSinglePackageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCardSinglePackageView.m; sourceTree = "<group>"; };
@@ -493,6 +497,8 @@
 				39F37D3F19EAEEB900EB3134 /* presto_dollar.png */,
 				39F37D4019EAEEB900EB3134 /* presto_time.png */,
 				39F37D3C19EAED9E00EB3134 /* presto_splash.png */,
+				39B42B9A19EB02E700D54967 /* m1.jpg */,
+				39B42B9B19EB02E700D54967 /* m3.jpg */,
 				39F37D3A19EAE1AA00EB3134 /* headshot-generic.jpg */,
 				392F3D5119EA71B2001CA2DF /* images_justdoit.jpeg */,
 				39A24A6619E990E3009B43C6 /* Jonathan.Ive.jpg */,
@@ -1006,10 +1012,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39B42B9C19EB02E700D54967 /* m1.jpg in Resources */,
 				39FAAC1219E93642003F6683 /* Settings.bundle in Resources */,
 				39A24A6719E990E3009B43C6 /* Jonathan.Ive.jpg in Resources */,
 				392F3D4A19EA6BD6001CA2DF /* CardView.xib in Resources */,
 				39FAAC0D19E9350C003F6683 /* LICENSE in Resources */,
+				39B42B9D19EB02E700D54967 /* m3.jpg in Resources */,
 				390063A219E924000080242B /* Main.storyboard in Resources */,
 				390063A719E924000080242B /* LaunchScreen.xib in Resources */,
 				390063A419E924000080242B /* Images.xcassets in Resources */,
