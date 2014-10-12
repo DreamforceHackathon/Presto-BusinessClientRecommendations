@@ -45,7 +45,10 @@
 
 // Fill these in when creating a new Connected Application on Force.com
 static NSString * const RemoteAccessConsumerKey = @"3MVG9Iu66FKeHhINkB1l7xt7kR8czFcCTUhgoA8Ol2Ltf1eYHOU4SqQRSEitYFDUpqRWcoQ2.dBv_a1Dyu5xa";
+//static NSString * const RemoteAccessConsumerKey = @"3MVG9xOCXq4ID1uF7BQSGQjF8hJvb_JtU48vCAPXvtUe65vzJmvymC7Ajg2Vb7kZRhWDUBlC6CeWRO1pD6r18";
 static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect/oauth/done";
+
+//static NSString * const OAuthRedirectURI        = @"sfdc://success";
 
 @interface AppDelegate () <SFAuthenticationManagerDelegate, SFUserAccountManagerDelegate>
 
@@ -83,6 +86,7 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
     self = [super init];
     if (self) {
         [SFLogger setLogLevel:SFLogLevelDebug];
+        [[SFAuthenticationManager sharedManager] logout];
         
         // These SFAccountManager settings are the minimum required to identify the Connected App.
         [SFUserAccountManager sharedInstance].oauthClientId = RemoteAccessConsumerKey;
@@ -93,6 +97,7 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
         // Auth manager delegate, for receiving logout and login host change events.
         [[SFAuthenticationManager sharedManager] addDelegate:self];
         [[SFUserAccountManager sharedInstance] addDelegate:self];
+        
         
         // Blocks to execute once authentication has completed.  You could define these at the different boundaries where
         // authentication is initiated, if you have specific logic for each case.

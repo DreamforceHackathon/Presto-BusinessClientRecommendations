@@ -18,6 +18,12 @@
 		39A24A6219E984A5009B43C6 /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A6119E984A5009B43C6 /* RootTabBarController.m */; };
 		39A24A6519E98F18009B43C6 /* EPContactListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A6419E98F18009B43C6 /* EPContactListingCell.m */; };
 		39A24A6719E990E3009B43C6 /* Jonathan.Ive.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39A24A6619E990E3009B43C6 /* Jonathan.Ive.jpg */; };
+		39A24A7019E9BC2B009B43C6 /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A6B19E9BC2B009B43C6 /* DraggableView.m */; };
+		39A24A7119E9BC2B009B43C6 /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A6D19E9BC2B009B43C6 /* DraggableViewBackground.m */; };
+		39A24A7219E9BC2B009B43C6 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A6F19E9BC2B009B43C6 /* OverlayView.m */; };
+		39A24A7519E9BCD4009B43C6 /* SwipeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A7419E9BCD4009B43C6 /* SwipeSelectionViewController.m */; };
+		39A24A7819E9BE1D009B43C6 /* SFContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A7719E9BE1D009B43C6 /* SFContact.m */; };
+		39A24A7E19EA02BF009B43C6 /* EFContactDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A24A7D19EA02BF009B43C6 /* EFContactDetailsViewController.m */; };
 		39FAAC0019E9350C003F6683 /* libMKNetworkKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAAB3A19E9350C003F6683 /* libMKNetworkKit-iOS.a */; };
 		39FAAC0119E9350C003F6683 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAAB3C19E9350C003F6683 /* libcrypto.a */; };
 		39FAAC0219E9350C003F6683 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FAAB3D19E9350C003F6683 /* libssl.a */; };
@@ -81,6 +87,18 @@
 		39A24A6319E98F18009B43C6 /* EPContactListingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPContactListingCell.h; sourceTree = "<group>"; };
 		39A24A6419E98F18009B43C6 /* EPContactListingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPContactListingCell.m; sourceTree = "<group>"; };
 		39A24A6619E990E3009B43C6 /* Jonathan.Ive.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jonathan.Ive.jpg; sourceTree = "<group>"; };
+		39A24A6A19E9BC2B009B43C6 /* DraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableView.h; sourceTree = "<group>"; };
+		39A24A6B19E9BC2B009B43C6 /* DraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableView.m; sourceTree = "<group>"; };
+		39A24A6C19E9BC2B009B43C6 /* DraggableViewBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableViewBackground.h; sourceTree = "<group>"; };
+		39A24A6D19E9BC2B009B43C6 /* DraggableViewBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableViewBackground.m; sourceTree = "<group>"; };
+		39A24A6E19E9BC2B009B43C6 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		39A24A6F19E9BC2B009B43C6 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		39A24A7319E9BCD4009B43C6 /* SwipeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeSelectionViewController.h; sourceTree = "<group>"; };
+		39A24A7419E9BCD4009B43C6 /* SwipeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeSelectionViewController.m; sourceTree = "<group>"; };
+		39A24A7619E9BE1D009B43C6 /* SFContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFContact.h; path = EasyPick/SFContact.h; sourceTree = "<group>"; };
+		39A24A7719E9BE1D009B43C6 /* SFContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFContact.m; path = EasyPick/SFContact.m; sourceTree = "<group>"; };
+		39A24A7C19EA02BF009B43C6 /* EFContactDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EFContactDetailsViewController.h; path = EasyPick/EFContactDetailsViewController.h; sourceTree = "<group>"; };
+		39A24A7D19EA02BF009B43C6 /* EFContactDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EFContactDetailsViewController.m; path = EasyPick/EFContactDetailsViewController.m; sourceTree = "<group>"; };
 		39FAAB3419E9350C003F6683 /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
 		39FAAB3519E9350C003F6683 /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
 		39FAAB3619E9350C003F6683 /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
@@ -338,6 +356,10 @@
 		3900638719E924000080242B = {
 			isa = PBXGroup;
 			children = (
+				39A24A7C19EA02BF009B43C6 /* EFContactDetailsViewController.h */,
+				39A24A7D19EA02BF009B43C6 /* EFContactDetailsViewController.m */,
+				39A24A7619E9BE1D009B43C6 /* SFContact.h */,
+				39A24A7719E9BE1D009B43C6 /* SFContact.m */,
 				3900639219E924000080242B /* EasyPick */,
 				390063AF19E924000080242B /* EasyPickTests */,
 				3900639119E924000080242B /* Products */,
@@ -358,6 +380,7 @@
 		3900639219E924000080242B /* EasyPick */ = {
 			isa = PBXGroup;
 			children = (
+				39A24A6919E9BC15009B43C6 /* Draggable */,
 				39FAAC2F19E97D41003F6683 /* InitialViewController.h */,
 				39FAAC3019E97D41003F6683 /* InitialViewController.m */,
 				3900639719E924000080242B /* AppDelegate.h */,
@@ -378,6 +401,8 @@
 				39A24A6119E984A5009B43C6 /* RootTabBarController.m */,
 				39A24A6319E98F18009B43C6 /* EPContactListingCell.h */,
 				39A24A6419E98F18009B43C6 /* EPContactListingCell.m */,
+				39A24A7319E9BCD4009B43C6 /* SwipeSelectionViewController.h */,
+				39A24A7419E9BCD4009B43C6 /* SwipeSelectionViewController.m */,
 			);
 			path = EasyPick;
 			sourceTree = "<group>";
@@ -414,6 +439,19 @@
 				39A24A6619E990E3009B43C6 /* Jonathan.Ive.jpg */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		39A24A6919E9BC15009B43C6 /* Draggable */ = {
+			isa = PBXGroup;
+			children = (
+				39A24A6A19E9BC2B009B43C6 /* DraggableView.h */,
+				39A24A6B19E9BC2B009B43C6 /* DraggableView.m */,
+				39A24A6C19E9BC2B009B43C6 /* DraggableViewBackground.h */,
+				39A24A6D19E9BC2B009B43C6 /* DraggableViewBackground.m */,
+				39A24A6E19E9BC2B009B43C6 /* OverlayView.h */,
+				39A24A6F19E9BC2B009B43C6 /* OverlayView.m */,
+			);
+			name = Draggable;
 			sourceTree = "<group>";
 		};
 		39FAAB3019E9350C003F6683 /* Dependencies */ = {
@@ -969,13 +1007,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				39FAAC3419E97E1E003F6683 /* ClientTableViewController.m in Sources */,
+				39A24A7E19EA02BF009B43C6 /* EFContactDetailsViewController.m in Sources */,
+				39A24A7219E9BC2B009B43C6 /* OverlayView.m in Sources */,
 				3900639F19E924000080242B /* ScheduleViewController.m in Sources */,
 				3900639919E924000080242B /* AppDelegate.m in Sources */,
 				39FAAC0419E9350C003F6683 /* README.md in Sources */,
+				39A24A7819E9BE1D009B43C6 /* SFContact.m in Sources */,
+				39A24A7019E9BC2B009B43C6 /* DraggableView.m in Sources */,
 				39FAAC3119E97D41003F6683 /* InitialViewController.m in Sources */,
 				39A24A6219E984A5009B43C6 /* RootTabBarController.m in Sources */,
+				39A24A7519E9BCD4009B43C6 /* SwipeSelectionViewController.m in Sources */,
 				3900639C19E924000080242B /* FirstViewController.m in Sources */,
 				3900639619E924000080242B /* main.m in Sources */,
+				39A24A7119E9BC2B009B43C6 /* DraggableViewBackground.m in Sources */,
 				39A24A6519E98F18009B43C6 /* EPContactListingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

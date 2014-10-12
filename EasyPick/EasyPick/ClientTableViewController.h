@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SFRestAPI.h"
 
-@interface ClientTableViewController : UITableViewController
+@interface ClientTableViewController : UITableViewController <SFRestDelegate>
+
+
+@property (nonatomic,strong)NSMutableArray *dataRows;
+
 
 @end

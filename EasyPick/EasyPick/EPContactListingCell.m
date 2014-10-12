@@ -30,7 +30,13 @@
     
     if (self) {
         // Helpers
-        CGSize size = self.contentView.frame.size;
+        self.imgContactPhoto.layer.cornerRadius = self.imgContactPhoto.frame.size.width / 2;
+        self.imgContactPhoto.clipsToBounds = YES;
+        self.imgContactPhoto.layer.borderWidth = 0.4f;
+        self.imgContactPhoto.layer.borderColor = [UIColor grayColor].CGColor;
+        //    cell.imgContactPhoto.layer.cornerRadius = 10.0f;
+
+//        CGSize size = self.contentView.frame.size;
         /*
         // Initialize Main Label
         self.mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(8.0, 8.0, size.width - 16.0, size.height - 16.0)];
