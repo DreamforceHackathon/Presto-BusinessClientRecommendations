@@ -10,7 +10,7 @@ include_once("yelp.php");
 
 define("CATEGORY_1", "restaurants");
 define("CATEGORY_2", "events");
-define("CATEGORY_2", "events_sports");
+define("CATEGORY_3", "events_sports");
 define("CATEGORY_ALL", "all");
 
 class events {
