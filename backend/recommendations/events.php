@@ -10,6 +10,8 @@ include_once("yelp.php");
 
 define("CATEGORY_1", "restaurants");
 define("CATEGORY_2", "events");
+define("CATEGORY_2", "events_sports");
+define("CATEGORY_ALL", "all");
 
 class events {
 
@@ -19,14 +21,21 @@ class events {
             $eventParams->city = $place->{'place name'};
             break;
         }
+        $restaurantsObject = self::getRestaurants(urlencode($eventParams->city));
+        $moviesObject = self::getMovies($eventParams->zip, $eventParams->date);
+        $sportsObject = self::getSports(urlencode($eventParams->city));
+        $concertsObject = self::getConcerts(urlencode($eventParams->city));
+        $eventsObjectArray = array($moviesObject, $sportsObject, $concertsObject);
+
         if($eventParams->api == CATEGORY_1) {
-            $restaurantsObject = self::getRestaurants(urlencode($eventParams->city));
             print_r($restaurantsObject);
         } else if($eventParams->api == CATEGORY_2) {
-            $moviesObject = self::getMovies($eventParams->zip, $eventParams->date);
-            $sportsObject = self::getSports(urlencode($eventParams->city));
-            $concertsObject = self::getConcerts(urlencode($eventParams->city));
             print_r($concertsObject);
+        } else if($eventParams->api == CATEGORY_3) {
+            print_r($sportsObject);
+        } else if($eventParams->api == CATEGORY_ALL) {
+            $packageObjectArray = array($restaurantsObject, json_encode($eventsObjectArray));
+            print_r(json_encode($packageObjectArray));
         } else {
             $serviceException = array("SERVICE_EXCEPTION", "INVALID_API_PARAMETER");
             print_r(json_encode($serviceException));
@@ -56,9 +65,9 @@ class events {
             $businessJson->eventname = $business->name;
             $businessJson->category = "Food&Dining";
             $businessJson->subcategory = "Restaurants";
-            $businessJson->price = rand(25, 50);
+            $businessJson->price = "" . rand(25, 50);
             $businessJson->image = "http://news.nextglass.co/wp-content/uploads/2014/08/food_and_fine_wine-wide.jpg";
-            $businessJson->time = rand(1, 2);
+            $businessJson->time = "" . rand(1, 2);
 
             $addressArray = array();
             foreach($business->location->display_address as $addressTuple) {
@@ -66,11 +75,10 @@ class events {
             }
             $businessJson->location = $addressArray;
             $businessMetaData = new stdClass();
-            $businessMetaData->shortdescription = $business->description;
+            $businessMetaData->shortdescription = substr(addslashes(strip_tags($business->description)), 0, 100);
             $businessMetaData->mobile_url = $business->mobile_url;
             $businessMetaData->review_count = $business->review_count;
             $businessMetaData->url = $business->url;
-            $businessMetaData->phone = $business->phone;
             $businessMetaData->display_phone = $business->display_phone;
             $businessJson->metadata = $businessMetaData;
             array_push($businessesArray, $businessJson);
@@ -101,13 +109,13 @@ class events {
             $concertJson->eventname = $concert->title;
             $concertJson->category = "Events";
             $concertJson->subcategory = "Concerts";
-            $concertJson->price = rand(50, 100);
+            $concertJson->price = "" . rand(50, 100);
             $concertJson->image = "http://cdn1.ticketsinventory.com/images/last_photos/concert/M/monster-massive/monster-massive-tickets-silverado_13033947377877.png";
-            $concertJson->time = rand(2, 4);
+            $concertJson->time = "" . rand(2, 4);
             $concertJson->location = $concert->venue_name . ", " . $concert->venue_address . ", " . $concert->city_name . ", " . $concert->region_name . ", " . $concert->postal_code;
 
             $concertMetaData = new stdClass();
-            $concertMetaData->shortdescription = substr(strip_tags($concert->description), 0, 100);
+            $concertMetaData->shortdescription = substr(addslashes(strip_tags($concert->description)), 0, 100);
             $concertMetaData->startTime = $concert->start_time;
             $concertMetaData->endTime = $concert->stop_time;
             $concertMetaData->url = $concert->url;
@@ -144,13 +152,13 @@ class events {
             $sportJson->eventname = $sport->title;
             $sportJson->category = "Events";
             $sportJson->subcategory = "Sports";
-            $sportJson->price = rand(30, 75);
+            $sportJson->price = "" .rand(30, 75);
             $sportJson->image = "http://www.bigbentavern.com/wp-content/uploads/2013/01/all-sports-banner.png";
             $sportJson->time = "3 Hours"; //($sportJson->endTime)-($sportJson->startTime)
             $sportJson->location = $sport->venue_name . ", " . $sport->venue_address . ", " . $sport->city_name . ", " . $sport->region_name . ", " . $sport->postal_code;
 
             $sportMetaData = new stdClass();
-            $sportMetaData->shortdescription = $sport->description;
+            $sportMetaData->shortdescription = substr(addslashes(strip_tags($sport->description)), 0, 100);
             $sportMetaData->startTime = $sport->start_time;
             $sportMetaData->endTime = $sport->stop_time;
             $sportMetaData->url = $sport->url;
@@ -183,7 +191,7 @@ class events {
             $movieJson->eventname = $movie->title;
             $movieJson->category = "Events";
             $movieJson->subcategory = "Movies";
-            $movieJson->price = rand(12, 20);
+            $movieJson->price = "" . rand(12, 20);
             $movieJson->image = $movie->preferredImage;
             $movieJson->time = $movie->runTime;
             $movieJson->location = $zip;
