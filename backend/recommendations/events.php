@@ -8,6 +8,9 @@
 include_once("components/auth_configs.php");
 include_once("yelp.php");
 
+define("CATEGORY_1", "restaurants");
+define("CATEGORY_2", "events");
+
 class events {
 
     function getEvents($eventParams) {
@@ -16,13 +19,31 @@ class events {
             $eventParams->city = $place->{'place name'};
             break;
         }
-        $moviesObject = self::getMovies($eventParams->zip, $eventParams->date);
-        $sportsObject = self::getSports(urlencode($eventParams->city));
-        $concertsObject = self::getConcerts(urlencode($eventParams->city));
-        $restaurantsObject = self::getRestaurants(urlencode($eventParams->city));
-        print_r($restaurantsObject);
+        if($eventParams->api == CATEGORY_1) {
+            $restaurantsObject = self::getRestaurants(urlencode($eventParams->city));
+            print_r($restaurantsObject);
+        } else if($eventParams->api == CATEGORY_2) {
+            $moviesObject = self::getMovies($eventParams->zip, $eventParams->date);
+            $sportsObject = self::getSports(urlencode($eventParams->city));
+            $concertsObject = self::getConcerts(urlencode($eventParams->city));
+            print_r($concertsObject);
+        } else {
+            $serviceException = array("SERVICE_EXCEPTION", "INVALID_API_PARAMETER");
+            print_r(json_encode($serviceException));
+        }
+
     }
 
+    /**
+     *
+     * http://www.yelp.com/developers/documentation/v2/search_api
+     * http://www.yelp.com/developers/documentation/v2/all_category_list
+     * http://www.yelp.com/developers/manage_api_keys
+     * http://www.yelp.com/developers/documentation/v2/search_api
+     *
+     * @param $city
+     * @return string
+     */
     function getRestaurants($city) {
         $longopts  = array("location::" . $city,);
         $options = getopt("", $longopts);
@@ -86,7 +107,7 @@ class events {
             $concertJson->location = $concert->venue_name . ", " . $concert->venue_address . ", " . $concert->city_name . ", " . $concert->region_name . ", " . $concert->postal_code;
 
             $concertMetaData = new stdClass();
-            $concertMetaData->shortdescription = $concert->description;
+            $concertMetaData->shortdescription = substr(strip_tags($concert->description), 0, 100);
             $concertMetaData->startTime = $concert->start_time;
             $concertMetaData->endTime = $concert->stop_time;
             $concertMetaData->url = $concert->url;

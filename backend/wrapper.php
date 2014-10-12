@@ -39,7 +39,7 @@ function setSearchParams() {
             $searchParams->slug = explode(',' , $_GET['slug']);
         }
         if(isset($_GET['api'])) {
-            $searchParams->api = explode(',' , $_GET['slug']);
+            $searchParams->api = $_GET['api'];
         }
         $searchParams->requestDate = date("F j, Y");
     }
