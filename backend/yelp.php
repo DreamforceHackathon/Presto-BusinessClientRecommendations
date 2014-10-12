@@ -77,8 +77,6 @@ function request($host, $path) {
 
     // Get the signed URL
     $signed_url = $oauthrequest->to_url();
-print_r($signed_url);
-
 
     // Send Yelp API Call
     $ch = curl_init($signed_url);
@@ -99,9 +97,8 @@ print_r($signed_url);
  */
 function search($term, $location) {
     $url_params = array();
-
-//    $url_params['term'] = $term ?: $GLOBALS['DEFAULT_TERM'];
     $url_params['location'] = $location?: $GLOBALS['DEFAULT_LOCATION'];
+    $url_params['category_filter'] = 'food';
 //    $url_params['limit'] = $GLOBALS['SEARCH_LIMIT'];
     $search_path = $GLOBALS['SEARCH_PATH'] . "?" . http_build_query($url_params);
     return request($GLOBALS['API_HOST'], $search_path);

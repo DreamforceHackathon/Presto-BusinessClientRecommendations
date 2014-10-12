@@ -20,22 +20,15 @@ class events {
         $sportsObject = self::getSports(urlencode($eventParams->city));
         $concertsObject = self::getConcerts(urlencode($eventParams->city));
         $restaurantsObject = self::getRestaurants(urlencode($eventParams->city));
-
-//        print_r($restaurantsObject);
+        print_r($restaurantsObject);
     }
 
     function getRestaurants($city) {
-        $longopts  = array(
-            "location::" . $city,
-        );
+        $longopts  = array("location::" . $city,);
         $options = getopt("", $longopts);
-
         $term = $options['term'] ?: '';
         $location = $options['location'] ?: '';
-
         $businesses = query_api($term, $location);
-//        print_r($businesses);
-//        $businesses = json_decode($data);
         $businessesArray = array();
         foreach($businesses->businesses as $business) {
             $businessJson = new stdClass();
@@ -43,20 +36,23 @@ class events {
             $businessJson->category = "Food&Dining";
             $businessJson->subcategory = "Restaurants";
             $businessJson->price = rand(25, 50);
-            $businessJson->image = "http://www.bigbentavern.com/wp-content/uploads/2013/01/all-musics-banner.png";
-            $businessJson->time = rand(2, 4);
-            $businessJson->location = $concert->venue_name . ", " . $concert->venue_address . ", " . $concert->city_name . ", " . $concert->region_name . ", " . $concert->postal_code;
+            $businessJson->image = "http://news.nextglass.co/wp-content/uploads/2014/08/food_and_fine_wine-wide.jpg";
+            $businessJson->time = rand(1, 2);
 
+            $addressArray = array();
+            foreach($business->location->display_address as $addressTuple) {
+                array_push($addressArray, $addressTuple);
+            }
+            $businessJson->location = $addressArray;
             $businessMetaData = new stdClass();
-            $businessMetaData->shortdescription = $concert->description;
-            $businessMetaData->startTime = $concert->start_time;
-            $businessMetaData->endTime = $concert->stop_time;
-            $businessMetaData->url = $concert->url;
-            $businessMetaData->venue_url = $concert->venue_url;
-            $businessMetaData->latitude = $concert->latitude;
-            $businessMetaData->longitude = $concert->longitude;
-            $concertJson->metadata = $concertMetaData;
-            array_push($businessesArray, $concertJson);
+            $businessMetaData->shortdescription = $business->description;
+            $businessMetaData->mobile_url = $business->mobile_url;
+            $businessMetaData->review_count = $business->review_count;
+            $businessMetaData->url = $business->url;
+            $businessMetaData->phone = $business->phone;
+            $businessMetaData->display_phone = $business->display_phone;
+            $businessJson->metadata = $businessMetaData;
+            array_push($businessesArray, $businessJson);
         }
         return json_encode($businessesArray);
     }
